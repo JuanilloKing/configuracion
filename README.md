@@ -71,5 +71,5 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 Autenticación: Recuerda hacer login en GitHub CLI (gh auth login) y sincronizar tus extensiones de VS Code.
 
-[!NOTE]
-Este script está diseñado para uso personal. Si decides usarlo, asegúrate de revisar las rutas de instalación y las versiones de los paquetes de PHP en el código.
+Nota: 
+_Este script está diseñado para uso personal. Si decides usarlo, asegúrate de revisar las rutas de instalación y las versiones de los paquetes de PHP en el código._ :octocat:
