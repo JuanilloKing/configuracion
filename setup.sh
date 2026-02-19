@@ -61,3 +61,39 @@ echo -e "${BLUE}✅ ¡Todo listo!${NC}"
 echo -e "1. Recuerda que el instalador de XAMPP está en ~/Downloads."
 echo -e "2. Aunque el script instaló configuraciones de i3, puedes seguir iniciando sesión en GNOME normalmente."
 echo -e "3. No olvides añadir el PATH de Flutter a tu .zshrc si el repo de conf no lo hace."
+
+# 9. Extensiones de GNOME Shell
+echo -e "${GREEN}🧩 Instalando extensiones de GNOME...${NC}"
+
+# Instalamos primero el gestor y las que están en repositorios oficiales
+sudo apt install -y gnome-shell-extension-manager \
+gnome-shell-extension-appindicator \
+gnome-shell-extension-dash-to-dock \
+gnome-shell-extension-desktop-icons-ng \
+gnome-shell-extension-vitals \
+gnome-shell-extensions
+
+# Para las extensiones que no están en APT (como Tiling Shell o Hanabi), 
+# la forma más pro de automatizarlas es usando 'gnome-extensions-cli'
+sudo apt install -y python3-pip
+pip install --user gnome-extensions-cli
+
+# Instalación automática de tus extensiones específicas por su UUID
+# (Extraído de tu imagen)
+gext install clipboard-indicator@tudmotu.com
+gext install CoverflowAltTab@palatis.blogspot.com
+gext install desktop-cube@schneegans.github.com
+gext install tiling-shell@ferrarodomenico.com
+gext install transparent-top-bar@ftpix.com
+gext install user-theme@gnome-shell-extensions.gcampax.github.com
+
+# Activar las extensiones instaladas
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
+gnome-extensions enable tiling-shell@ferrarodomenico.com
+gnome-extensions enable Vitals@CoreCoding.com
+gnome-extensions enable clipboard-indicator@tudmotu.com
+gnome-extensions enable CoverflowAltTab@palatis.blogspot.com
+gnome-extensions enable desktop-cube@schneegans.github.com
+gnome-extensions enable ding@rastersoft.com
+gnome-extensions enable Vitals@CoreCoding.com
+gnome-extensions enable RecentItems@bananenfisch.net
