@@ -10,10 +10,20 @@ echo -e "${BLUE}🚀 Iniciando instalación completa (Debian + GNOME + Dev Stack
 # 1. Actualización inicial
 sudo apt update && sudo apt upgrade -y
 
-# 2. Dependencias de sistema y herramientas que vimos en tu lista
-echo -e "${GREEN}📦 Instalando herramientas base...${NC}"
-sudo apt install -y git curl wget build-essential kitty zsh fonts-firacode \
-fzf ripgrep bat lsd zoxide neofetch xsel flatpak snapd unrar 7zip
+# 2. Fuentes y herramientas de terminal (Iconos)
+echo -e "${GREEN}📦 Instalando LiterationMono Nerd Font y herramientas base...${NC}"
+sudo apt install -y git curl wget unzip fonts-powerline
+
+# Descarga e instalación de LiterationMono Nerd Font
+mkdir -p ~/.local/share/fonts
+cd /tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/LiberationMono.zip
+unzip -o LiberationMono.zip -d ~/.local/share/fonts
+fc-cache -f -v
+cd ~
+
+# Herramientas de visualización en terminal
+sudo apt install -y kitty zsh fzf ripgrep bat lsd zoxide neofetch xsel
 
 # 3. Tu configuración personalizada (Repositorio Externo)
 echo -e "${GREEN}⚙️ Aplicando tu configuración de ~/.conf...${NC}"
